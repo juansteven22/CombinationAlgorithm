@@ -1,0 +1,20 @@
+
+graph TD
+    A[Inicio] --> B[Crear lista de resultados vacía]
+    B --> C[Crear tabla hash]
+    C --> D[Iterar a través de tabla1]
+    D --> E{¿Clave en tabla hash?}
+    E -->|Sí| F[Agregar valor a clave existente]
+    E -->|No| G[Crear nuevo par clave-valor]
+    F --> H[Siguiente elemento en tabla1]
+    G --> H
+    H --> I{¿Más elementos?}
+    I -->|Sí| D
+    I -->|No| J[Iterar a través de tabla2]
+    J --> K{¿Clave en tabla hash?}
+    K -->|Sí| L[Agregar pares coincidentes al resultado]
+    K -->|No| M[Siguiente elemento en tabla2]
+    L --> M
+    M --> N{¿Más elementos?}
+    N -->|Sí| J
+    N -->|No| O[Fin]

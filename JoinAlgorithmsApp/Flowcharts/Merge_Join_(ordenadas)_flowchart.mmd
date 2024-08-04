@@ -1,0 +1,21 @@
+
+graph TD
+    A[Inicio] --> B[Crear lista de resultados vacía]
+    B --> C{¿Tablas ordenadas?}
+    C -->|No| D[Ordenar tabla1 y tabla2]
+    C -->|Sí| E[Inicializar índices i=0, j=0]
+    D --> E
+    E --> F{i < tabla1.Count && j < tabla2.Count}
+    F -->|Sí| G{Comparar claves}
+    G -->|tabla1[i] < tabla2[j]| H[i++]
+    G -->|tabla1[i] > tabla2[j]| I[j++]
+    G -->|tabla1[i] = tabla2[j]| J[Agregar par al resultado]
+    J --> K[j++]
+    K --> L{j = tabla2.Count o claves diferentes}
+    L -->|Sí| M[i++, j=0]
+    L -->|No| N[Volver a comparar]
+    H --> F
+    I --> F
+    M --> F
+    N --> G
+    F -->|No| O[Fin]

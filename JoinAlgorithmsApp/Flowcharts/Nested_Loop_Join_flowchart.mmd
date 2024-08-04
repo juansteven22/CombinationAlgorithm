@@ -1,0 +1,15 @@
+
+graph TD
+    A[Inicio] --> B[Crear lista de resultados vacía]
+    B --> C[Iterar a través de tabla1]
+    C --> D[Iterar a través de tabla2]
+    D --> E{¿Claves coinciden?}
+    E -->|Sí| F[Agregar par al resultado]
+    E -->|No| G[Siguiente elemento en tabla2]
+    F --> G
+    G --> H{¿Más elementos en tabla2?}
+    H -->|Sí| D
+    H -->|No| I[Siguiente elemento en tabla1]
+    I --> J{¿Más elementos en tabla1?}
+    J -->|Sí| C
+    J -->|No| K[Fin]

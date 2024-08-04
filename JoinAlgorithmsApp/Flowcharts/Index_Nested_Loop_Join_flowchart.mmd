@@ -1,0 +1,13 @@
+
+graph TD
+    A[Inicio] --> B[Crear lista de resultados vacía]
+    B --> C[Crear índice para tabla2]
+    C --> D[Iterar a través de tabla1]
+    D --> E{¿Clave de tabla1 en índice?}
+    E -->|Sí| F[Obtener coincidencias del índice]
+    E -->|No| G[Siguiente elemento en tabla1]
+    F --> H[Agregar pares coincidentes al resultado]
+    H --> G
+    G --> I{¿Más elementos en tabla1?}
+    I -->|Sí| D
+    I -->|No| J[Fin]
